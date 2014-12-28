@@ -11,6 +11,7 @@ bool GameLayer::init() {
         
         //png加入全局cache
         CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("shoot_background.plist");
+        CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("shoot.plist");
         
         background1 = CCSprite::createWithSpriteFrame(CCSpriteFrameCache::sharedSpriteFrameCache()->spriteFrameByName("background.png"));
         background1->setAnchorPoint(ccp(0, 0));
@@ -21,6 +22,9 @@ bool GameLayer::init() {
         background2->setAnchorPoint(ccp(0, 0));
         background2->setPosition(ccp(0, background2->getContentSize().height - 2));
         this->addChild(background2);
+        
+        this->planeLayer = PlaneLayer::create();
+        addChild(planeLayer);
         
         schedule(schedule_selector(GameLayer::backgrondMove), 0.01f);
         

@@ -9,6 +9,19 @@
 #ifndef __airplane__PlaneLayer__
 #define __airplane__PlaneLayer__
 
-#include <stdio.h>
+#include "cocos2d.h"
+
+class PlaneLayer : public cocos2d::CCLayer{
+public:
+    PlaneLayer();
+    
+    ~PlaneLayer();
+    
+    static PlaneLayer* create();
+    
+    virtual bool init();
+    
+    static PlaneLayer* sharedPlane;
+};
 
 #endif /* defined(__airplane__PlaneLayer__) */

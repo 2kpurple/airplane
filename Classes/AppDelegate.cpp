@@ -16,6 +16,8 @@ bool AppDelegate::applicationDidFinishLaunching() {
     // initialize director
     CCDirector* pDirector = CCDirector::sharedDirector();
     CCEGLView* pEGLView = CCEGLView::sharedOpenGLView();
+    
+    pEGLView->setFrameSize(480, 800);
 
     pDirector->setOpenGLView(pEGLView);
 	
@@ -28,9 +30,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     // create a scene. it's an autorelease object
     CCScene *pScene = GameScene::create();
     
-    CCSize winSize = pDirector->getWinSize();
-    
-    pEGLView->setDesignResolutionSize(480, 840, kResolutionNoBorder);
+    pEGLView->setDesignResolutionSize(480, 800, kResolutionExactFit);
 
     // run
     pDirector->runWithScene(pScene);

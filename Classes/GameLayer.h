@@ -2,6 +2,7 @@
 #define __HELLOWORLD_SCENE_H__
 
 #include "cocos2d.h"
+#include "PlaneLayer.h"
 
 class GameLayer : public cocos2d::CCLayer
 {
@@ -18,6 +19,7 @@ private:
     
     cocos2d::CCSprite* background1;
     cocos2d::CCSprite* background2;
+    PlaneLayer* planeLayer;
 };
 
 #endif // __HELLOWORLD_SCENE_H__
